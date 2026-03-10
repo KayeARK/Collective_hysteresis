@@ -185,7 +185,7 @@ for (k in seq_along(kernels)) {
 
 
 #save results for later use
-save(results_up, results_down, light_levels, file = "Code/gamma_individual_b3_results.RData")
+save(results_up, results_down, light_levels, file = "Figure 2/gamma_individual_b3_results.RData")
 ## -----------------------------
 ## Theoretical analysis with individual thresholds
 ## -----------------------------
@@ -265,7 +265,6 @@ compute_mean_field_gamma <- function(L_vals) {
 }
 
 # Compute theoretical curve for uniform kernel
-cat("Computing theoretical mean-field solution with finite-size correction...\n")
 
 light_levels_2 <- seq(0, L_upper, length.out = 1000)  # Restrict to biological range [0,1]
 theory_results <- compute_mean_field_gamma(light_levels_2)
@@ -274,7 +273,6 @@ theory_results <- compute_mean_field_gamma(light_levels_2)
 stable_theory <- theory_results[theory_results$stability == "stable", ]
 unstable_theory <- theory_results[theory_results$stability == "unstable", ]
 
-cat("Total points:", nrow(theory_results), "(", nrow(stable_theory), "stable,", nrow(unstable_theory), "unstable )\n")
 
 # Create theoretical data for plotting - SIMPLIFIED threshold-based branches
 theory_data <- data.frame()
@@ -286,7 +284,6 @@ theory_data <- data.frame()
 y_threshold_lower <- 1  # Below this = Lower branch
 y_threshold_upper <- 1  # Above this = Upper branch
 
-cat("Using y threshold =", y_threshold_lower, "to separate stable branches\n")
 
 if (nrow(stable_theory) > 0) {
   # Sort all stable points
@@ -435,7 +432,7 @@ p <- ggplot() +
 print(p)
 
 ggsave(
-  filename = "hysteresis_individual_gamma_thresholds_beta3.pdf",
+  filename = "Figure 2/hysteresis_individual_gamma_thresholds_beta3.pdf",
   plot = p,
   width = 7,
   height = 7,

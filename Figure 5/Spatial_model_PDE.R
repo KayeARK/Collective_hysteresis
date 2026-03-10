@@ -94,5 +94,5 @@ for (n in 1:Nt) {
 }
 
 #save the underlying data
-save(snapshots, file = "PDE Model Images/spatial_model_PDE_data.RData")
+save(snapshots, file = "Figure 5/spatial_model_PDE_data.RData")
 

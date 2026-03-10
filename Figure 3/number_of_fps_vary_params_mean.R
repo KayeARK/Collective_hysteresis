@@ -167,7 +167,7 @@ ggplot() +
   )
 
 
-ggsave("Vary parameters/analytic_number_of_fps_vary_params_mean.pdf", width = 7, height = 7)
+ggsave("Figure 3/analytic_number_of_fps_vary_params_mean.pdf", width = 7, height = 7)
 
 # -------------------------------
 # Plot underlying gamma distributions
@@ -235,4 +235,4 @@ p_gamma <- ggplot(gamma_data, aes(x = z, y = density, color = factor(color_index
   scale_y_continuous(expand = c(0, 0))
 
 print(p_gamma)
-ggsave("Vary parameters/gamma_distributions_vary_params_mean.pdf", plot = p_gamma, width = 7, height = 7)
+ggsave("Figure 3/gamma_distributions_vary_params_mean.pdf", plot = p_gamma, width = 7, height = 7)

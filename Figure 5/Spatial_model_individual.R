@@ -102,3 +102,6 @@ for (t in 1:Nt) {
   }
 }
 
+#save the underlying data
+save(snapshots, file = "Figure 5/spatial_model_individual_data.RData")
+

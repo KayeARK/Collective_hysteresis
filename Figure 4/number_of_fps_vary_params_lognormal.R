@@ -95,10 +95,6 @@ compute_fold_branches <- function(dist, params,
   z_near_zero <- 1e-6
   z_near_tmax <- params$Tmax - 1e-6
   
-  cat("For", paste("a =", params$a, ", b =", params$b), ":\n")
-  cat("At z ≈ 0:", "L =", L_of_z(z_near_zero), "\n")
-  cat("At z ≈ Tmax:", "L =", L_of_z(z_near_tmax), "\n")
-  cat("Minimum L in curve:", min(L_of_z(z_vals), na.rm = TRUE), "\n\n")
 
   curve <- data.frame(
     z = z_vals,
@@ -210,7 +206,7 @@ ggplot() +
   ))
 
 
-ggsave("Vary distributions/analytic_number_of_fps_vary_params_lognormal.pdf", width = 7, height = 7)
+ggsave("Figure 4/analytic_number_of_fps_vary_params_lognormal.pdf", width = 7, height = 7)
 
 # -------------------------------
 # Plot underlying gamma distributions
@@ -254,4 +250,4 @@ p_gamma <- ggplot(gamma_data, aes(x = z, y = density, color = factor(color_index
   scale_y_continuous(expand = c(0, 0))
 
 print(p_gamma)
-ggsave("Vary distributions/lognormal_distributions_vary_params.pdf", plot = p_gamma, width = 7, height = 7)
+ggsave("Figure 4/lognormal_distributions_vary_params.pdf", plot = p_gamma, width = 7, height = 7)

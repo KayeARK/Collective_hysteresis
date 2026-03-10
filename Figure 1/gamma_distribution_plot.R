@@ -57,4 +57,4 @@ ggplot() +
   scale_y_continuous(expand = c(0, 0))
 
 # Save the plot
-ggsave("gamma_distribution_plot.pdf", width = 8, height = 6, bg = "white")
+ggsave("Figure 1/gamma_distribution_plot.pdf", width = 8, height = 6, bg = "white")

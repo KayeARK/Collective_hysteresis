@@ -118,4 +118,4 @@ p <- p %>%
 p
 
 # To save the plot as an HTML file
-htmlwidgets::saveWidget(p, "cusp_catastrophe_gamma.html")
+htmlwidgets::saveWidget(p, "Figure 2/cusp_catastrophe_gamma.html")

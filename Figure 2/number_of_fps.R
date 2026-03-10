@@ -96,4 +96,4 @@ ggplot() +
   theme_minimal(base_size = 13)
 
 
-ggsave("analytic_number_of_fps.pdf", width = 7, height = 7)
+ggsave("Figure 2/analytic_number_of_fps.pdf", width = 7, height = 7)

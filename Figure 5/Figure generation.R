@@ -5,7 +5,7 @@ library(grid)
 library(dplyr)
 
 # Load PDE data
-load("PDE Model Images/spatial_model_PDE_data.RData")
+load("Figure 5/spatial_model_PDE_data.RData")
 
 # ---- Spatial grid ----
 Nx <- 100
@@ -22,7 +22,7 @@ snap_times <- c(0, 2, 5, 10, 20)
 # ---- Plot and save each PDE snapshot separately ----
 for (k in seq_along(snapshots)) {
   # Create filename
-  filename <- sprintf("PDE Model Images/spatial_snapshot_t_%02d.pdf", as.integer(snap_times[k]))
+  filename <- sprintf("Figure 5/spatial_snapshot_t_%02d.pdf", as.integer(snap_times[k]))
   
   # Create color palette with more contrasting intermediates
   color_palette <- colorRampPalette(c(
@@ -88,13 +88,12 @@ for (k in seq_along(snapshots)) {
   
   dev.off()
   
-  cat("Saved PDE plot:", filename, "\n")
 }
 
 # -------------------------------
 # Load and plot Individual data  
 # -------------------------------
-load("PDE Model Images/spatial_model_individual_data.RData")
+load("Figure 5/spatial_model_individual_data.RData")
 individual_snapshots <- snapshots  # Rename to avoid conflicts with PDE data
 
 # Plot individual snapshots
@@ -131,8 +130,7 @@ create_spatial_plot <- function(df, filename) {
 # Generate individual plots
 for (i in seq_along(individual_snapshots)) {
   time_val <- individual_snapshots[[i]]$time[1]
-  filename <- paste0("PDE Model Images/spatial_snapshot_individual_t", time_val, ".pdf")
+  filename <- paste0("Figure 5/spatial_snapshot_individual_t", time_val, ".pdf")
   create_spatial_plot(individual_snapshots[[i]], filename)
-  cat("Saved individual plot:", filename, "\n")
 }
 
